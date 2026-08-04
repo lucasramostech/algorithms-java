@@ -9,27 +9,32 @@ public class BinarySearch {
         System.out.print("Digite o número a buscar: ");
         int target = sc.nextInt();
 
-        int low = 0; int high = arr1.length - 1; int mid = 0;
-        boolean encontrado = false;
+        // Chamada da função
+        int result = binarySearch(arr1, target);
+      
+        sc.close();
+    }
 
+    // Função de busca de binária 
+    public static int binarySearch(int[] arr, int target) {
+        int low = 0;
+        int high = arr.length - 1;
+
+        // Loop de busca binária
         while (low <= high) {
-            mid = (low + high) / 2;
+            int mid = (low + high) / 2;
 
-            if (target > arr1[mid]) {
-                low = mid + 1;
-            } else if (target < arr1[mid]) {
-                high = mid - 1;
+            // Condicionais de verificação
+            if (arr[mid] == target) {
+                System.out.println("Número encontrado na posição: " + mid);
+                return mid;
+            } else if (arr[mid] < target) {
+                low = mid + 1; 
             } else {
-                System.out.printf("O número %d foi encontrado na posição %d", target, mid);
-                encontrado = true;
-                break;
+                high = mid - 1;
             }
         }
 
-        if (!encontrado) {
-            System.out.printf("O número %d não foi encontrado", target);
-        }
-
-        sc.close();
+        System.out.println("Número não encontrado"); return -1; 
     }
 }
