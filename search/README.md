@@ -1,46 +1,55 @@
-# algorithms-java
+# Binary Search
 
-Implementações de algoritmos e estruturas de dados clássicos em Java, com foco em análise de complexidade (Big O), lógica de implementação do zero e boas práticas de código (organização, legibilidade e reutilização). Cada algoritmo é implementado sem uso de bibliotecas prontas, priorizando o entendimento do funcionamento interno.
+Implementação em Java do algoritmo de busca binária. Ele serve para realizar buscas ordenadas de forma rápida e eficientes
 
-## Avisos 
+## Como funciona
 
-Este repositório está em constante evolução. Novos algoritmos, refatorações e correções são adicionados continuamente conforme o progresso nos estudos, com foco inicial em Java.
+Busca um valor em um array ordenado, dividindo o intervalo de busca pela metade a cada iteração.
 
-## Objetivo
+1. Compara o valor buscado com o elemento do meio (`mid`)
+2. Se for igual, retorna o índice
+3. Se o valor for maior, descarta a metade inferior (`low = mid + 1`)
+4. Se o valor for menor, descarta a metade superior (`high = mid - 1`)
+5. Repete até encontrar o valor ou o intervalo se esgotar (`low > high`)
 
-Repositório de estudo com o objetivo de estudar algoritmos em Java, fixando fundamentos de estrutura de dados, lógica de implementação e análise de complexidade (Big O) a cada novo algoritmo adicionado.
+## Onde é utilizado
 
-## Estrutura
+- Busca em bancos de dados indexados
+- Autocomplete e sugestões (busca em listas ordenadas)
+- Sistemas de arquivos (busca de blocos/índices)
+- Controle de versão (ex: `git bisect`, que encontra o commit que introduziu um bug)
+- Estruturas de dados como árvores balanceadas (AVL, B-Trees) usam a mesma lógica internamente
+- Qualquer cenário com dados ordenados e necessidade de busca rápida
+
+## Número de passos
+
+Como o intervalo é dividido pela metade a cada passo, o número máximo de comparações necessárias para encontrar (ou descartar) um elemento em um array de tamanho `n` é:
 
 ```
-algorithms-java/
-├── search/
-│   └── BinarySearch.java
+passos = log₂(n)
 ```
 
-Cada pasta contém uma categoria de algoritmo, com seu próprio README explicando funcionamento e complexidade.
+**Exemplo:** para um array com 1.000.000 de elementos, o binary search precisa de no máximo:
 
-## Algoritmos implementados
+```
+log₂(1.000.000) ≈ 20 passos
+```
 
-**Binary Search**: Busca um valor em array ordenado, dividindo o intervalo pela metade a cada iteração até encontrar o alvo ou esgotar as possibilidades.
+Comparado a uma busca linear, que no pior caso precisaria de 1.000.000 de passos.
 
-## Como Executar
+## Pré-requisito
 
-Apenas clone o repositório:
+O array precisa estar ordenado. Caso contrário, o algoritmo não funciona corretamente.
+
+## Uso
 
 ```bash
-git clone https://github.com/SEU_USUARIO/algorithms-java.git
-cd algorithms-java
+javac BinarySearch.java
+java BinarySearch
 ```
 
-## Versionamento
+## Exemplo
 
-Cada novo algoritmo é adicionado via commit próprio, junto com README do algoritmo respectivo e outras informações.
-
-Essa é a versão **1.0** que inclue: 
-
-**- BinarySearch.**
-
-## Licença
-
-Este projeto está sob a licença MIT.
+![alt text](printBinary1.png)
+![alt text](printBinary2.png)
+![alt text](printBinary3.png)

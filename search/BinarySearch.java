@@ -6,6 +6,14 @@ public class BinarySearch {
 
         int[] arr1 = {1, 3, 5, 7, 9, 11, 13, 15, 17, 19};
 
+        // Exibir o array
+        System.out.print("Array: ");
+        for (int i = 0; i < arr1.length; i++) {
+            System.out.print(arr1[i] + " ");
+        }
+
+        System.out.println();
+
         System.out.print("Digite o número a buscar: ");
         int target = sc.nextInt();
 
