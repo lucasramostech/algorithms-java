@@ -9,9 +9,10 @@ public class SelectionSort {
 
             selectionSort(numeros); 
     }
-    
+
     public static void selectionSort(ArrayList<Integer> numeros) {
         ArrayList<Integer> numerosOrdenados = new ArrayList<>();
+        System.out.println("Array original: " + numeros);
 
         for (int numeroAtual : new ArrayList<>(numeros)) {
 
