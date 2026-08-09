@@ -16,6 +16,8 @@ Repositório de estudo com o objetivo de estudar algoritmos em Java, fixando fun
 algorithms-java/
 ├── search/
 │   └── BinarySearch.java
+├── sorting/
+│   └── SelectionSort.java
 ```
 
 Cada pasta contém uma categoria de algoritmo, com seu próprio README explicando funcionamento e complexidade.
@@ -23,6 +25,8 @@ Cada pasta contém uma categoria de algoritmo, com seu próprio README explicand
 ## Algoritmos implementados
 
 **Binary Search**: Busca um valor em array ordenado, dividindo o intervalo pela metade a cada iteração até encontrar o alvo ou esgotar as possibilidades.
+
+**Selection Sort**: Ordena um array selecionando repetidamente o menor elemento restante e movendo-o para a posição correta.
 
 ## Como Executar
 
@@ -40,6 +44,9 @@ Cada novo algoritmo é adicionado via commit próprio, junto com README do algor
 Essa é a versão **1.0** que inclue: 
 
 **- BinarySearch.**
+
+
+**- SelectionSort.**
 
 ## Licença
 
