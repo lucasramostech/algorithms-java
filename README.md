@@ -17,7 +17,8 @@ algorithms-java/
 ├── search/
 │   └── BinarySearch.java
 ├── sorting/
-│   └── SelectionSort.java
+│   ├── SelectionSort.java
+│   └── QuickSort.java
 ```
 
 Cada pasta contém uma categoria de algoritmo, com seu próprio README explicando funcionamento e complexidade.
@@ -27,6 +28,8 @@ Cada pasta contém uma categoria de algoritmo, com seu próprio README explicand
 **Binary Search**: Busca um valor em array ordenado, dividindo o intervalo pela metade a cada iteração até encontrar o alvo ou esgotar as possibilidades.
 
 **Selection Sort**: Ordena um array selecionando repetidamente o menor elemento restante e movendo-o para a posição correta.
+
+**Quick Sort**: Ordena um array através da lógica de dividir para conquistar, fazendo arrays separados e juntando eles de forma recursiva.
 
 ## Como Executar
 
@@ -41,12 +44,13 @@ cd algorithms-java
 
 Cada novo algoritmo é adicionado via commit próprio, junto com README do algoritmo respectivo e outras informações.
 
-Essa é a versão **1.0** que inclue: 
+Essa é a versão **1.2** que inclue: 
 
 **- BinarySearch.**
 
-
 **- SelectionSort.**
+
+**- QuickSort.**
 
 ## Licença
 
