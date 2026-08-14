@@ -1,3 +1,4 @@
+package QuickSort;
 import java.util.ArrayList;
 import java.util.Arrays;
 
@@ -9,11 +10,16 @@ public class QuickSort {
             50, 19, 85, 3, 64, 36, 72, 12, 99, 25,
             60, 38, 48, 14, 79, 23));
 
+        System.out.println("Array desordenado: " + array);
+
         ArrayList<Integer> ordenado = quickSort(array);
-        System.out.println(ordenado);
+        System.out.println("Array ordenado: " + ordenado);
     }
 
+    // Função do quicksort
     static ArrayList<Integer> quickSort(ArrayList<Integer> array) {
+
+    
     
         if (array.size() <= 1) {
             return array;
@@ -23,7 +29,7 @@ public class QuickSort {
         ArrayList<Integer> esquerda = new ArrayList<>();
         ArrayList<Integer> direita = new ArrayList<>();
 
-        
+        // loop que percorre o array e separa direita e esquerda 
         for (int i = 0; i < array.size() - 1; i++) {
             int numero = array.get(i);
             if (numero < pivo) {
@@ -33,7 +39,7 @@ public class QuickSort {
             }
         }
 
-    
+        // Recursao que chama a si mesmo dnv
         ArrayList<Integer> resultado = new ArrayList<>();
         resultado.addAll(quickSort(esquerda));   
         resultado.add(pivo);                    
