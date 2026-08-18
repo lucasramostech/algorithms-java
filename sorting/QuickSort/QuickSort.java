@@ -18,19 +18,22 @@ public class QuickSort {
 
     // Função do quicksort
     static ArrayList<Integer> quickSort(ArrayList<Integer> array) {
-
-    
-    
         if (array.size() <= 1) {
             return array;
         }
 
-        int pivo = array.get(array.size() - 1);
+        int meio = array.size() / 2;
+        int pivo = array.get(meio);
+        
         ArrayList<Integer> esquerda = new ArrayList<>();
         ArrayList<Integer> direita = new ArrayList<>();
 
         // loop que percorre o array e separa direita e esquerda 
-        for (int i = 0; i < array.size() - 1; i++) {
+        for (int i = 0; i < array.size(); i++) {
+            if (i == meio) {
+                continue; // Pula o índice do pivô para não duplicá-lo
+            }
+            
             int numero = array.get(i);
             if (numero < pivo) {
                 esquerda.add(numero);
@@ -42,9 +45,10 @@ public class QuickSort {
         // Recursao que chama a si mesmo dnv
         ArrayList<Integer> resultado = new ArrayList<>();
         resultado.addAll(quickSort(esquerda));   
-        resultado.add(pivo);                    
+        resultado.add(pivo);                        
         resultado.addAll(quickSort(direita));    
 
         return resultado;
     }
+
 }
